@@ -8,25 +8,47 @@
   </head>
   <body>
     <div class="wrapper_full">
-      <header>
+      <script src="https://unpkg.com/vue@next"></script>
+<header id="app">
     <h1 class="logo">logo</h1>
     <nav>
-        <ul>
-            <li><a href="index.html">首頁</a></li>
-            <li><a href="about.html">關於我們</a></li>
-            <li><a href="product.html">產品頁</a></li>
+        <ul >
+            <li v-for="(item, index) in navItems" :key="index"><a :href="item.link">{{item.text}}</a></li>
+            <!--<li><a href="index.html">首頁</a></li> 
+                <li><a href="about.html">關於我們</a></li>
+                <li><a href="product.html">產品頁</a></li> -->
         </ul>
     </nav>
 </header>
+<script>
+    const app = Vue.createApp({
+        data() {
+            return {
+                navItems: [
+                        {
+                            link: "index.html",
+                            text: "首頁"
+                        },
+                        {
+                            link: "about.html",
+                            text: "關於我們"
+                        },
+                        {
+                            link: "product.html",
+                            text: "產品頁"
+                        }
+                    ]
+            }
+        }
+    }).mount('#app')
+</script>
       <div class="content index">
         <h1>首頁</h1>
         <!-- <div class="box"></div>
              <div class="component"></div> -->
         <div class="btn_group">
-          <div class="btn btn_default btn_primary btn_radius">按鈕</div>
-          <div class="btn btn_sm btn_error btn_radius">按鈕</div>
-           <div class="btn btn_xl btn_fail btn_radius">按鈕</div>
-            <div class="btn btn_xl btn_primary btn_rounded">按鈕</div>
+          <div class="btn btn_default btn_radius">按鈕</div>
+          <div class="btn btn_default btn_radius">按鈕</div>
         </div>
       </div>
       <footer>
