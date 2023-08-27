@@ -15,9 +15,9 @@
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/sexfat/chd103_sass/issues"
+    "url": "https://github.com/KaiKaiKay/chd103_sass.git/issues"
   },
-  "homepage": "https://github.com/sexfat/chd103_sass#readme",
+  "homepage": "https://github.com/KaiKaiKay/chd103_sass.git#readme",
   "dependencies": {
     "bootstrap": "^5.3.1",
     "jquery": "^3.7.0",
