@@ -33,15 +33,14 @@
 // sass 運算
 
 // div {
-//   width: 100px + 400px; //要注意單位
+//   width: 100px + 400px; //要注意單位 不能不同單位相加相減
 //   height: 100px - 10px;
 //   margin: 10 * 10 + px;
 //   //font : (100 / 30) + px;// 除法要注意
 // }
 
 // @if @else @else if
-
-$color: red;
+$color: red; //設定變數$color
 @if $color == black {
   .a {
     color: black;
@@ -52,6 +51,7 @@ $color: red;
   }
 }
 
+//字體
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Noto+Sans+TC:wght@100;400&family=Roboto&display=swap');
 
 

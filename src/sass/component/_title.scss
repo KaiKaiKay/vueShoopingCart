@@ -7,4 +7,5 @@ h1 {
 .title {
   @include fontWeight(bold);
   @include fontstyle(en);
+  //變數設定在mixin裡
 }

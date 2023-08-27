@@ -232,7 +232,12 @@ header {
 }
 @media all and (max-width: 996px) {
   header {
-    background-color: #86a400;
+    background-color: #00a473;
+  }
+}
+@media all and (max-width: 414px) {
+  header {
+    background-color: #ff00ea;
   }
 }
 header nav ul {

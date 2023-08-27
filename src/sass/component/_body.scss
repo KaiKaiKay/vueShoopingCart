@@ -15,8 +15,12 @@ body {
 //   background-color: #a5ff28;
 // }
 
+//內容區設定最寬1200px header&footer做滿版->在mixin.scss設定
 .wrapper_full {
   @include layout(100%);
+  // .content{
+  //   @include layout(1200px)
+  // }
   padding: 10px 20px;
 }
 

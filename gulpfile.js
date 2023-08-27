@@ -69,6 +69,7 @@ function styleSass() {
     return src('./src/sass/*.scss')
         .pipe(sass.sync().on('error', sass.logError))
         .pipe(dest('./dist/css'));
+        //如果改成 sync({outputStyle:'compressed'}) css就會變成一行
 }
 
 exports.style = styleSass
