@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="/dist/css/style.css">
+  <link rel="stylesheet" href="../dist/css/style.css">
   <title>購物車</title>
 </head>
 
@@ -15,17 +15,17 @@
     </div>
     <div class="wrap" v-else>
       <div class="inner">
-        <div v-for="item in products" :key="index" class="card">
+        <div v-for="(item,index) in products" :key="index" class="card">
           <div v-if="item">
             <img :src="item.picSrc" alt="item.title">
             <p class="cardName">{{item.title}}</p>
             <p>${{item.price}}</p>
-            <input type="number" v-model="item.inCart" min="0">
+            <input type="number" v-model="item.inCart" @input="autoDelete(item,index)" min="0">
             <button class="deleteProd" @click="deleteProduct(index)">刪除商品</button>
           </div>
         </div>
       </div>
-      <p class="allprice">總金額：{{allprice}}</p>
+      <p class="allprice">總金額：{{calculateTotalPrice()}}</p>
       <button class="deleteAll" @click="reset">清除購物車</button>
     </div>
 
@@ -63,12 +63,18 @@
             }
           ],
           allprice: 0,
+
         }
       },
       computed: {
 
       },
       methods: {
+        autoDelete(item,index){
+          if(item.inCart <= 0){
+            this.products.splice(index, 1);
+          }
+        },
         deleteProduct(index) {
           this.products.splice(index, 1);
         },
@@ -76,6 +82,9 @@
           //清空購物車
           this.products = [];
         },
+        calculateTotalPrice() {
+          return this.products.reduce((total, item) => total + item.price * item.inCart, 0);
+        }
       }
     }).mount('#app')
   </script>
