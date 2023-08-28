@@ -1,60 +1,49 @@
-//變數
-/*css 註解*/
-
-//共用變數
-@import "base/color";
-@import "base/font";
-@import "base/var";
-@import "base/reset";
-
-//function
-@import "mixin/mixin";
-
-//component
-@import "component/btn";
-@import "component/card";
-@import "component/form";
-@import "component/body";
-@import "component/title";
-
-// layout
-@import "layout/header";
-@import "layout/footer";
-@import "layout/login";
-
-// page
-@import "page/index";
-@import "page/about";
-@import "page/product";
-
-//plugin
-// @import "plugin/bootstrap";
-
-// sass 運算
-
-// div {
-//   width: 100px + 400px; //要注意單位 不能不同單位相加相減
-//   height: 100px - 10px;
-//   margin: 10 * 10 + px;
-//   //font : (100 / 30) + px;// 除法要注意
-// }
-
-// @if @else @else if
-$color: red; //設定變數$color
-@if $color == black {
-  .a {
-    color: black;
-  }
-} @else if $color == red {
-  .a {
-    color: #f20;
-  }
+.wrap {
+    max-width: 1200px;
+    border: 1px solid;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
 }
 
-//字體
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Noto+Sans+TC:wght@100;400&family=Roboto&display=swap');
+.inner {
+    display: flex;
+}
 
+.card {
+    width: 300px;
+    border: 1px solid black;
+    text-align: center;
+}
 
+img {
+    width: 50%;
+    margin-top: 20px;
+    border: 1px solid;
+    vertical-align: top;
+}
 
+.allprice {
+    border-bottom: 1px solid;
+    margin: 20px auto;
+}
+
+input {
+    margin: 0 0 20px;
+    height: 30px;
+    width: 50px;
+}
+
+.deleteAll,
+.deleteProd {
+    display: flex;
+    margin: 0 auto 20px;
+    padding: 5px 10px;
+    background-color: #fff;
+    border-radius: 50px;
+    color: red;
+    border: red 1px solid;
+    cursor: pointer;
+}
 
 

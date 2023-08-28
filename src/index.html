@@ -1,24 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="css/style.css" />
-    <title>首頁</title>
-  </head>
-  <body>
-    <div class="wrapper_full">
-      @@include('layout/header.html')
-      <div class="content index">
-        <h1>首頁</h1>
-        <!-- <div class="box"></div>
-            <div class="component"></div> -->
-        <div class="btn_group">
-          <div class="btn btn_default btn_radius btn_primary">按鈕</div>
-          <div class="btn btn_sm btn_radius btn_error">按鈕</div>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/dist/css/style.css">
+  <title>購物車</title>
+</head>
+
+<body>
+  <div id="app">
+    <div v-if="prodCount===0">
+      沒有資料
+    </div>
+    <div class="wrap" v-else>
+      <div class="inner">
+        <div v-for="item in products" :key="index" class="card">
+          <div v-if="item">
+            <img :src="item.picSrc" alt="item.title">
+            <p class="cardName">{{item.title}}</p>
+            <p>${{item.price}}</p>
+            <input type="number" v-model="item.inCart" min="0">
+            <button class="deleteProd" @click="deleteProduct(index)">刪除商品</button>
+          </div>
         </div>
       </div>
-      @@include('layout/footer.html')
+      <p class="allprice">總金額：{{allprice}}</p>
+      <button class="deleteAll" @click="reset">清除購物車</button>
     </div>
-  </body>
+
+  </div>
+
+  <script src="https://unpkg.com/vue@next"></script>
+  <script>
+    const app = Vue.createApp({
+      data() {
+        return {
+          products: [
+            {
+              picSrc: "/src/images/ikon.jpg",
+              title: "iKON 官方手燈",
+              price: 1200,
+              inCart: 1,
+            },
+            {
+              picSrc: "/src/images/mamamoo.jpg",
+              title: "MAMAMOO 官方手燈",
+              price: 1400,
+              inCart: 1,
+            },
+            {
+              picSrc: "/src/images/shinee.jpg",
+              title: "SHINEE 官方手燈",
+              price: 1400,
+              inCart: 1,
+            },
+            {
+              picSrc: "/src/images/sj.jpg",
+              title: "SUPER JUNIOR 官方手燈",
+              price: 1350,
+              inCart: 1,
+            }
+          ],
+          allprice: 0,
+        }
+      },
+      computed: {
+
+      },
+      methods: {
+        deleteProduct(index) {
+          this.products.splice(index, 1);
+        },
+        reset() {
+          //清空購物車
+          this.products = [];
+        },
+      }
+    }).mount('#app')
+  </script>
+</body>
+
 </html>

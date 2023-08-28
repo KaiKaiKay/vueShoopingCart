@@ -1,310 +1,47 @@
-@charset "UTF-8";
-/*css 註解*/
-@import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Noto+Sans+TC:wght@100;400&family=Roboto&display=swap");
-html,
-body,
-div,
-span,
-applet,
-object,
-iframe,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-blockquote,
-pre,
-a,
-abbr,
-acronym,
-address,
-big,
-cite,
-code,
-del,
-dfn,
-em,
-img,
-ins,
-kbd,
-q,
-s,
-samp,
-small,
-strike,
-strong,
-sub,
-sup,
-tt,
-var,
-b,
-u,
-i,
-center,
-dl,
-dt,
-dd,
-ol,
-ul,
-li,
-fieldset,
-form,
-label,
-legend,
-table,
-caption,
-tbody,
-tfoot,
-thead,
-tr,
-th,
-td,
-article,
-aside,
-canvas,
-details,
-embed,
-figure,
-figcaption,
-footer,
-header,
-hgroup,
-menu,
-nav,
-output,
-ruby,
-section,
-summary,
-time,
-mark,
-audio,
-video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline;
+.wrap {
+  max-width: 1200px;
+  border: 1px solid;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
 }
 
-/* HTML5 display-role reset for older browsers */
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-menu,
-nav,
-section {
-  display: block;
-}
-
-body {
-  line-height: 1;
-}
-
-ol,
-ul {
-  list-style: none;
-}
-
-blockquote,
-q {
-  quotes: none;
-}
-
-blockquote:before,
-blockquote:after,
-q:before,
-q:after {
-  content: "";
-  content: none;
-}
-
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-a {
-  color: #333;
-  font-size: 20px;
-}
-a:hover {
-  color: #999;
-}
-
-.btn {
-  cursor: pointer;
-  display: inline-flex !important;
-  align-items: center;
-  justify-content: center;
-  letter-spacing: 0.43px;
-}
-
-.btn_default {
-  width: 150px;
-  height: 40px;
-}
-
-.btn_sm {
-  width: 100px;
-  height: 40px;
-}
-
-.btn_xl {
-  width: 200px;
-  height: 40px;
-}
-
-.btn_primary {
-  border: 1px solid #0700d1;
-  color: #0700d1;
-}
-.btn_primary:hover {
-  background-color: #0700d1;
-  color: #fff;
-}
-
-.btn_error {
-  border: 1px solid #c02300;
-  color: #c02300;
-}
-.btn_error:hover {
-  background-color: #c02300;
-  color: #fff;
-}
-
-.btn_fail {
-  border: 1px solid #01d21d;
-  color: #01d21d;
-}
-.btn_fail:hover {
-  background-color: #01d21d;
-  color: #fff;
-}
-
-.btn_radius {
-  border-radius: 10px;
-}
-
-.btn_rounded {
-  border-radius: 30px;
-}
-
-body {
-  background-color: #fffd9f;
-  font-size: 20px;
-  margin: 0;
-  padding: 0;
-  line-height: 1.2;
-  font-family: "Noto Sans TC", sans-serif;
-}
-
-.wrapper_full {
-  width: 100%;
-  padding: 10px 20px;
-}
-
-h1 {
-  font-size: 60px;
-  font-weight: 100;
-}
-
-.title {
-  font-weight: bold;
-  font-family: "Montserrat", sans-serif;
-}
-
-header {
-  width: 100%;
-  background-color: #ffb302;
-}
-@media all and (max-width: 996px) {
-  header {
-    background-color: #00a473;
-  }
-}
-@media all and (max-width: 414px) {
-  header {
-    background-color: #ff00ea;
-  }
-}
-header nav ul {
-  list-style: none;
+.inner {
   display: flex;
 }
-@media all and (max-width: 700px) {
-  header nav ul {
-    display: none;
-  }
-}
-header nav ul li {
-  padding: 10px 30px;
-  background-color: #20ea88;
+
+.card {
+  width: 300px;
+  border: 1px solid black;
   text-align: center;
 }
-@media all and (max-width: 996px) {
-  header nav ul li {
-    background-color: #024c64;
-  }
-  header nav ul li a {
-    color: #fff;
-  }
+
+img {
+  width: 50%;
+  margin-top: 20px;
+  border: 1px solid;
+  vertical-align: top;
 }
 
-footer {
-  width: 100%;
-  background-color: #060162;
-  color: #fff;
+.allprice {
+  border-bottom: 1px solid;
+  margin: 20px auto;
 }
 
-.index h1 {
-  color: #f2ff00;
-}
-.index .box {
-  margin: 0 auto;
-  width: 400px;
-  background-color: #aa00ff;
-}
-.index .component {
-  margin: 0 auto;
-  width: 100%;
-  height: 300px;
-  padding: 10px;
-  background-color: #1100ff;
+input {
+  margin: 0 0 20px;
+  height: 30px;
+  width: 50px;
 }
 
-.about h1 {
-  color: #0026ff;
-  font-size: 50px;
-}
-.about .box1 {
-  width: 400px;
-  height: 400px;
-}
-.about section {
-  max-width: 1320px;
-  margin: 0 auto;
-  width: 100%;
-  background-color: #1e6b00;
-  height: 300px;
-}
-
-.product h1 {
-  color: #c700d2;
-}
-
-.a {
-  color: #f20;
+.deleteAll,
+.deleteProd {
+  display: flex;
+  margin: 0 auto 20px;
+  padding: 5px 10px;
+  background-color: #fff;
+  border-radius: 50px;
+  color: red;
+  border: red 1px solid;
+  cursor: pointer;
 }
